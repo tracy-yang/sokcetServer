@@ -9,9 +9,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "koa": "^2.0.0-alpha.8",
     "koa-bodyparser": "^4.2.1",
+    "koa-cors": "0.0.16",
     "koa-mysql": "^1.0.3",
     "koa-mysql-session": "0.0.2",
-    "koa-router": "^7.4.0"
+    "koa-router": "^7.4.0",
+    "mysql": "^2.16.0"
   }
 }

@@ -2,12 +2,15 @@ const Koa = require('koa');
 const app = new Koa();
 const router = require('./router');
 const bodyparser = require('koa-bodyparser');
-const mysql = require('koa-mysql');
-const mysqlConfig = require('./config/config');
+const cors = require('koa-cors');
 
-let db = mysql.createPool(mysqlConfig);
-
-
+app.use(cors(
+    {
+        origin: function (ctx) {
+            return "*"; 
+        }
+    }
+));
 app.use(bodyparser());
 router(app)
 app.listen(3000)
