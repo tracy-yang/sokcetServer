@@ -11,6 +11,7 @@ function query(sql,value){
                 reject(err)
             }else{
                 con.query(sql,value,(err, rows) => {
+                    console.log(err,rows,33333)
                     if (err){
                         reject(err);
                     }else{
