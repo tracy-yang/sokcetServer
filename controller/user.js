@@ -8,16 +8,17 @@ userMethods = {
      login:async(ctx,next) =>{
         let userName = ctx.request.body.userName;
         let password = ctx.request.body.password
-        query('select * from users where userName = ? and password = ?',[userName,password]).then(undefined,data=>{
+        let res;
+        await query('select * from users where userName = ? and password = ?',[userName,password]).then(undefined,data=>{
             let userInfo = data[0];
-            let res ;
             if(userInfo){
                 res = success('','登陆成功！')
             }else{
                 res = falied(403,'登陆失败！')
             }
-            ctx.body = res;
         });
+        console.log(res,3333);
+        ctx.body = res;
        
      }
 }
